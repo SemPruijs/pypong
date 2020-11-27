@@ -74,6 +74,7 @@ window.onkey(paddle_a_down, "r")
 window.onkey(paddle_b_up, "Up")
 window.onkey(paddle_b_down, "Down")
 
+
 while True:
     window.update()
 
@@ -85,8 +86,7 @@ while True:
     if ball.ycor() > 290:
         ball.sety(290)
         ball.dy *= -1
-
-    if ball.ycor() < -280:
+    elif ball.ycor() < -280:
         ball.sety(-280)
         ball.dy *= -1
 
@@ -100,7 +100,6 @@ while True:
     if ball.xcor() > 330 and paddle_b.ycor() + 50 > ball.ycor() > paddle_b.ycor() - 50:
         ball.dx *= -1
         ball.color("red")
-
-    if ball.xcor() < -330 and paddle_a.ycor() + 50 > ball.ycor() > paddle_a.ycor() - 50:
+    elif ball.xcor() < -330 and paddle_a.ycor() + 50 > ball.ycor() > paddle_a.ycor() - 50:
         ball.dx *= -1
         ball.color("blue")
