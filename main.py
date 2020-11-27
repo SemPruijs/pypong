@@ -35,30 +35,38 @@ ball.dx = 2
 ball.dy = 2
 
 
+def move_paddle(paddle, direction):
+    if paddle == "a":
+        y = paddle_a.ycor()
+        if direction == "up":
+            y += 20
+        else:
+            y -= 20
+        paddle_a.sety(y)
+    else:
+        y = paddle_b.ycor()
+        if direction == "up":
+            y += 20
+        else:
+            y -= 20
+        paddle_b.sety(y)
 
 
 def paddle_a_up():
-    y = paddle_a.ycor()
-    y += 20
-    paddle_a.sety(y)
+    move_paddle("a", "up")
 
 
 def paddle_a_down():
-    y = paddle_a.ycor()
-    y -= 20
-    paddle_a.sety(y)
+    move_paddle("a", "down")
 
 
 def paddle_b_up():
-    y = paddle_b.ycor()
-    y += 20
-    paddle_b.sety(y)
+    move_paddle("b", "up")
 
 
 def paddle_b_down():
-    y = paddle_b.ycor()
-    y -= 20
-    paddle_b.sety(y)
+    move_paddle("b", "down")
+
 
 window.listen()
 window.onkey(paddle_a_up, "w")
